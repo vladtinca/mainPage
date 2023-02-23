@@ -1,0 +1,213 @@
+:root {
+    --darkGrey: hsl(0, 0%, 15%);
+    --grey: hsl(0, 0%, 25%);
+    --lightGrey: hsl(0, 0%, 70%);
+    --accentNice: hsl(96, 82%, 35%);
+    --accentNiceTransp: hsla(96, 82%, 35%, 0.7);
+    --wrong: rgb(250, 50, 50);
+    --right: rgb(40, 175, 40);
+    --textLight: white;
+    --textDark: black;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("./Montserrat-Regular.woff") format("woff")
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    /* outline: solid 1px red; */
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+body {
+    background-color: var(--lightGrey);
+    color: var(--textLight);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    font-size: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2px 4px;
+    background-color: var(--darkGrey);
+}
+
+li,
+a,
+.cta {
+    color: var(--textLight);
+    font-weight: 500;
+    text-decoration: none;
+
+}
+
+.logo {
+    display: block;
+    margin-right: auto;
+    cursor: pointer;
+    width: 3rem;
+    transition: 0.3s ease 0s;
+}
+
+.logo:hover {
+    opacity: 0.85;
+}
+
+.navLinks li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.navLinks li a {
+    transition: 0.3s ease 0s;
+}
+
+.navLinks li a:hover {
+    color: var(--accentNice);
+}
+
+.cta {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.3rem 0.6rem;
+    background-color: var(--accentNice);
+    border: none;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: 0.3s ease 0s;
+}
+
+.cta:hover {
+    background-color: var(--accentNiceTransp);
+}
+
+main {
+    display: grid;
+    justify-content: center;
+}
+
+.gameTitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.score {
+    margin-left: auto;
+    font-size: 1rem;
+}
+
+h1 {
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+.game {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+#image-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+
+}
+
+.dogImg {
+    max-width: 80vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    border: solid 0.2rem var(--darkGrey);
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.3rem;
+}
+
+.option {
+    font-size: 1.3rem;
+    border-radius: 0.7rem;
+    padding: 0.2rem 0.2rem;
+    margin: 0.2rem;
+    border: 0;
+    background-color: var(--darkGrey);
+    color: var(--textLight);
+    transition: 0.3s ease 0s;
+}
+
+.option:disabled {
+    opacity: 0.5;
+
+}
+
+.option:not(:disabled):hover {
+    opacity: 0.8;
+}
+
+@media (max-width:450px) {
+
+    h1 {
+        font-size: larger;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+
+    .game {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        justify-content: center;
+    }
+
+    .dogImg {
+        max-width: 80vw;
+        max-height: 80vh;
+        width: auto;
+        height: auto;
+    }
+}
+
+@media (max-width:340px) {
+    h1 {
+        font-size: medium;
+    }
+}
+
+.correct {
+    background-color: var(--right);
+}
+
+.incorrect {
+    background-color: var(--wrong);
+}
+
+footer {
+    font-size: 0.8rem;
+    position: fixed;
+    bottom: 1px;
+    left: 2px;
+    right: 2px;
+    display: flex;
+    justify-content: end;
+}
