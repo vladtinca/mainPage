@@ -114,7 +114,7 @@ function renderQuiz(imgUrl, correctAnswer, choices) {
 async function loadQuizData() {
     let doggoImgUrl = await fetchMessage(RANDOM_IMG_ENDPOINT);
     let correctBreed = getBreedFromURL(doggoImgUrl);
-    let breedChoices = getMultipleChoices(3, correctBreed, BREEDS);
+    let breedChoices = getMultipleChoices(4, correctBreed, BREEDS);
 
     return [doggoImgUrl, correctBreed, breedChoices];
 }
